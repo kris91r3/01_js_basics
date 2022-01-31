@@ -9,21 +9,19 @@
   </head>
   <body>
     <script>
-      let længde = 32;
-      let bredde = 6;
-      let areal = længde * bredde;
+      let d = new Date();
+      let tid = d.getHours();
+
       let resultat;
 
-      //   Hvis arealet er under 100, skal der stå: Arealet er for lille.
-      //   Er arealet mellem 100 og 200, skal der stå: Arealet er ok
-      // Er det større end (eller lig med)  200, skal der stå: Arealet er for stort
-
-      if (areal < 100) {
-        resultat = "Arealet er for lille";
-      } else if (areal < 200) {
-        resultat = "Arealet er ok";
-      } else {
-        resultat = "Arealet er for stort";
+      if (tid < 5) {
+        resultat = "Godnat mellem 24 og 5";
+      } else if (tid < 10) {
+        resultat = "Godmorgen mellem 5 og 10";
+      } else if (tid < 18) {
+        resultat = "Goddag mellem 10 og 18";
+      } else if (tid < 24) {
+        resultat = "godaften mellem 18 og 24";
       }
 
       console.log(resultat);
