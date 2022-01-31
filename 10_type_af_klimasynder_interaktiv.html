@@ -8,23 +8,31 @@
     <title>Document</title>
   </head>
   <body>
+    <p>Angiv din flyvetid</p>
+    <input type="text" id="timer" />
+    <button>Klik og beregn flyvetid, se konsollen</button>
     <script>
-      let timer = 0.5;
-      let co2UdledtIKgVedFlyrejse = timer * 109;
-      let udledt = co2UdledtIKgVedFlyrejse;
-      let resultat = `Ved ${timer} timers flyverejse, har du udledt ${udledt} kg co2`;
+      document.querySelector("button").addEventListener("click", buttonClicked);
+      function buttonClicked() {
+        let timer = document.querySelector("#timer").value;
+        let co2UdledtIKgVedFlyrejse = timer * 109;
+        let udledt = co2UdledtIKgVedFlyrejse;
+        // let resultat = `Ved ${timer} timers flyverejse, har du udledt ${udledt} kg co2`;
 
-      if (udledt < 100) {
-        resultat = "Tæt på Thunberg";
-      } else if (udledt < 200) {
-        resultat = "Ja ja du behøver ikke melde dig ud af Å";
-      } else if (udledt < 600) {
-        resultat = "Det er godt for turismen i Nordeuropa";
-      } else {
-        resultat = "Nå ja vi kan jo altid kolonisere en anden planet";
+        if (isNaN(udledt)) {
+          resultat = "Dette er ikke et tal, prøv igen";
+        } else if (udledt < 100) {
+          resultat = "Tæt på Thunberg";
+        } else if (udledt < 200) {
+          resultat = "Ja ja du behøver ikke melde dig ud af Å";
+        } else if (udledt < 600) {
+          resultat = "Det er godt for turismen i Nordeuropa";
+        } else {
+          resultat = "Nå ja vi kan jo altid kolonisere en anden planet";
+        }
+
+        console.log(resultat);
       }
-
-      console.log(resultat);
     </script>
   </body>
 </html>
