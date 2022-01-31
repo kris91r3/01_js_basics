@@ -8,12 +8,28 @@
     <title>Document</title>
   </head>
   <body>
+    <p>Gæt tallet mellem 0 & 20</p>
+    <input type="text" id="tal" />
+    <button>Gæt tallet</button>
     <script>
-      let længde = 35;
-      let bredde = 54;
-      let areal = længde * bredde;
-      let resultat = `Længden er ${længde} meter og bredden er ${bredde} meter. Arealet er ${areal}`;
-      console.log(resultat);
+      document.querySelector("button").addEventListener("click", buttonClicked);
+
+      function buttonClicked() {
+        let nummer = document.querySelector("#tal").value;
+        let tal;
+        tal = Math.round(Math.random() * 20);
+        let minTekst =
+
+        if ((nummer = tal)) {
+          minTekst = minTekst +  rigtigt, prøv igen";
+        } else if (nummer > tal) {
+          minTekst = minTekst + " for højt, prøv igen";
+        } else if (nummer < tal) {
+          minTekst = minTekst + " for tallet, prøv igen";
+        }
+
+        console.log(nummer);
+      }
     </script>
   </body>
 </html>
